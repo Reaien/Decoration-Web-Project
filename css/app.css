@@ -41,6 +41,7 @@ img{
     font-weight: 900;
     padding: 1rem;
     transition: background-color .3s ease-out;
+    text-align: center;
 }
 
 .btn:hover{
@@ -50,6 +51,10 @@ img{
 /*Utilidades*/
 .text-center{
     text-align: center;
+}
+
+.max-width-30{
+    max-width: 30rem;
 }
 
 .contenedor{
@@ -226,6 +231,7 @@ img{
 }
 .footer-menu a{
     display: block;
+    width: 40%;
 }
 
 .copyright{
@@ -262,5 +268,36 @@ img{
     margin-bottom: 5rem;
     padding-left: 5rem;
     background-size: 5rem;
-    
+}
+
+/*blog*/
+
+.contenedor-blog{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 3rem;
+}
+
+.entrada{
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 5rem;
+}
+
+.entrada:last-of-type{
+    border-bottom: none;
+}
+
+.titulo-aside{
+    font-size: 3rem;
+}
+.entrada-meta{
+    display: flex;
+    justify-content: space-between;
+}
+
+.entrada-meta p{
+    font-weight: 600;
+}
+.entrada-meta span{
+    color: rgb(245, 124, 87);
 }
