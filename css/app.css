@@ -231,7 +231,8 @@ img{
 }
 .footer-menu a{
     display: block;
-    width: 40%;
+    width: fit-content;
+    margin: .5rem 0 .5rem 0;
 }
 
 .copyright{
@@ -300,4 +301,28 @@ img{
 }
 .entrada-meta span{
     color: rgb(245, 124, 87);
+}
+.contenido-entrada-blog{
+    width: 60rem;
+    margin: 0 auto;
+}
+
+/*galeria*/
+.titulo-galeria{
+    border-bottom: 2px solid #e1e1e1;
+}
+
+.galeria{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+
+.galeria img{
+    width: 40rem;
+    height: 30rem;
+    object-fit: cover;
 }
