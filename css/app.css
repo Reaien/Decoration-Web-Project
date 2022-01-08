@@ -49,6 +49,9 @@ img{
 }
 
 /*Utilidades*/
+.titulo a{
+    text-decoration: none;
+}
 .text-center{
     text-align: center;
 }
