@@ -33,58 +33,83 @@
     <main class="contenido-principal contenedor">
         <h2 class="text-center">Contacto</h2>
 
-        <form>
-            <div class="campo">
+        <form class="formulario">
+            <div>
                 <fieldset>
                     <legend>Tus Datos</legend>
-                    <div>
+                    <div class="campo">
                         <label for="nombre">Nombre</label>
-                        <input id="nombre" type="text" placeholder="Ingresa tu nombre">
+                        <input id="nombre" type="text" placeholder="Ingresa tu nombre" required>
                     </div>
 
-                    <div>
+                    <div class="campo">
                         <label for="asunto">Asunto</label>
-                        <input id="asunto" type="text" placeholder="Ingresar asunto">
+                        <input id="asunto" type="text" placeholder="Ingresar asunto" required>
                     </div>
 
-                    <div>
+                    <div class="campo">
                         <label for="email">E-mail</label>
-                        <input id="email" type="email" placeholder="Ingresa tu correo">
+                        <input id="email" type="email" placeholder="Ingresa tu correo" required>
                     </div>
 
-                    <div>
+                    <div class="campo">
                         <label for="tel">Telefono</label>
-                        <input id="tel" type="tel" placeholder="Ingresa tu contacto">
+                        <input id="tel" type="tel" placeholder="Ingresa tu contacto" required>
                     </div>
 
-                    <div>
+                    <div class="campo">
                         <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" cols="20" rows="20" placeholder="Déjanos tus comentarios"></textarea>
+                        <textarea id="mensaje" cols="23" rows="10" placeholder="Déjanos tus comentarios" required></textarea>
                     </div>
                 </fieldset>
             </div>
 
-            <div class="campo">
-                <fieldset>
-                    <legend>País</legend>
-                </fieldset>
-            </div>
+            <fieldset>
+                <legend>País</legend>
 
-            <div class="campo">
-                <fieldset>
-                    <legend>Informacion Extra</legend>
-                </fieldset>
-            </div>
+                <div class="campo">
+                        <label for="pais" >País</label>
+                        <select id="pais">
+                            <option>--- Seleccione ---</option>
+                            <option value="CL">Chile</option>
+                            <option value="PE">Perú</option>
+                            <option value="AR">Argentina</option>
+                            <option value="UR">Uruguay</option>
+                            <option value="CH">Chimbarongo</option>
+                        </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Informacion extra</legend>
+                    <div class="campo">
+                    <label for="cliente">Cliente</label>
+                    <input id="cliente" type="radio" name="tipo" value="cliente">
+                    </div>
+                    
+                    <div class="campo">
+                    <label for="proveedor">Proveedor</label>
+                    <input id="proveedor" type="radio" name="tipo" value="proveedor">
+                    </div>
+
+                    <div class="campo">
+                    <label for="categoria">Categoría de interés</label>
+                    <input list="categorias" name="categorias">
+                    <datalist id="categorias">
+                        <option value="Cocina">
+                        <option value="Habitacion">
+                        <option value="Muebles">
+                        <option value="Exterior">
+                        <option value="Baño">
+                        <option value="Sala">
+                    </datalist>
+                    </div>
+            </fieldset>
+
+            <input class="btn" type="submit" value="Enviar Formulario">
+
         </form>
     </main>
-
-
-
-
-
-
-
-
 
     <footer class="site-footer">
         <div class="grid-footer contenedor">
