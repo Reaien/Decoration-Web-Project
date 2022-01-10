@@ -33,6 +33,10 @@ img{
     display: block;
 }
 
+a{
+    color: inherit;
+}
+
 .btn{
     background-color: #7da808;
     display: block; /*hacemos que el color tome todo el elemento*/
@@ -94,6 +98,8 @@ img{
     background-position: center center;
     height: 55rem;
 }
+
+
 
 /* categorias */
 
