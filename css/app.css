@@ -148,6 +148,9 @@ a{
 .categorias{
     margin-bottom: 2rem;
 }
+.categorias img{
+    width: 100%;
+}
 .categorias a{
     background-color: rgba(212, 141, 141, 0.466);
     border-bottom-right-radius: 2.5rem;
