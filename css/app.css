@@ -13,17 +13,35 @@ body{
 /* Globales */
 h1, h2,h3{
     font-family: 'Nunito', sans-serif;
-    margin: 0 0 5rem 0;
+    margin: 0 0 2rem 0;
 }
 h1{
-    font-size: 5rem;
-}
-h2{
-    font-size: 4rem;
-}
-h3{
     font-size: 3rem;
 }
+@media (min-width: 768px) {
+    h1{
+        font-size: 5rem;
+    } 
+}
+
+h2{
+    font-size: 2.5rem;
+}
+@media (min-width: 768px) {
+    h2{
+        font-size: 4rem;
+    } 
+}
+
+h3{
+    font-size: 1.8rem;
+}
+@media (min-width: 768px) {
+    h3{
+        font-size: 3rem;
+    } 
+}
+
 a{
     text-decoration: none;
 }
@@ -86,9 +104,25 @@ a{
     
 }
 .nav-principal{
-    padding: 2rem 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.nav-principal a{
+    margin: 1rem 0;
+}
+@media (min-width: 768px) {
+    .nav-principal{
+        padding: 2rem 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 1.8rem;
+    }
+    .nav-principal a{
+        margin: 0;
+    }
 }
 
 .hero{
@@ -96,7 +130,12 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 55rem;
+    height: 25rem;
+}
+@media (min-width: 768px) {
+    .hero{
+        height: 55rem;
+    }
 }
 
 
@@ -106,106 +145,138 @@ a{
 .titulo-categoria{
     padding-top: 5rem;
 }
+.categorias{
+    margin-bottom: 2rem;
+}
 .categorias a{
+    background-color: rgba(212, 141, 141, 0.466);
+    border-bottom-right-radius: 2.5rem;
+    border-bottom-left-radius: 2.5rem;
     text-align: center;
     display: block;
     padding: 1.5rem;
     font-size: 2rem;
 }
-.categorias a:hover{
-    background-color: rgba(192, 81, 17, 0.384);
-    color: white;
-    border-bottom-right-radius: 2.5rem;
-    border-bottom-left-radius: 2.5rem;
+
+
+
+@media (min-width: 768px) {
+    .listado-categorias{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+    .categorias{
+        margin: 0;
+    }
+    .categorias a{
+        background-color: unset;
+    }
+    .categorias a:hover{
+        background-color: rgba(192, 81, 17, 0.384);
+        color: white;
+    }
 }
-.listado-categorias{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-}
+
 
 /*nosotros*/
 
 .sobre-nosotros{
-    background-image: linear-gradient(to right, transparent 50%, rgb(245, 205, 202) 50%, rgb(245, 205, 202) 100%), url(../img/nosotros.jpg);
-    background-position: left center;
-    padding: 8rem 0 8rem 0;
+    background-image: linear-gradient(to bottom, transparent 50%, rgb(245, 205, 202) 50%, rgb(245, 205, 202) 100%), url(../img/nosotros.jpg);
+    background-position: center, left top;
     background-repeat: no-repeat;
-    background-size: 100%, 120rem;
+    background-size: 100%, 70rem;
     margin-top: 5rem;
 }
-/*EJEMPLO GRID EN SECCION SOBRE NOSOTROS POSICIONAR
+@media (min-width: 768px) {
+    .sobre-nosotros{
+        background-image: linear-gradient(to right, transparent 50%, rgb(245, 205, 202) 50%, rgb(245, 205, 202) 100%), url(../img/nosotros.jpg);
+        background-position: left center;
+        padding: 8rem 0 8rem 0;
+        background-repeat: no-repeat;
+        background-size: 100%, 120rem;
+        margin-top: 5rem;
+    }
+}
 .sobre-nosotros-grid{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 4rem; el gap hace separaciones entre las columnas
+    grid-template-rows: repeat(2, 1fr);
 }
-*/
-/*.texto-nosotros{
-    grid-column: 2 / 3;  esto permite posicionar elementos entre las columnas del grid
-} 
-*/
-
-/*Metodo flex mismo resultado de grid*/
-.sobre-nosotros-grid{
-    display: flex;
-    justify-content: flex-end;
+@media (min-width: 768px) {
+    .sobre-nosotros-grid{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 4rem;
+        grid-template-rows: unset;
+    }
 }
-
 .texto-nosotros{
-    flex-basis: 50%; /*controla el ancho del elemento*/
-    padding-left: 4rem;
+    grid-row: 2 / 3;  
+    padding: 1rem .5rem;
+}
+@media (min-width: 768px) {
+    .texto-nosotros{
+        grid-column: 2 / 3;
+    }
 }
 
 /*seccion productos*/
 .contenido-principal{
     padding-top: 5rem;
 }
-.listado-productos{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2rem; /*separa elementos en columnas y en rows de grid*/
-}
-/*posicionar elementos dentro de las columnas de grid*/
-.producto:nth-child(1){
-    grid-column: 1 / 7;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-}
-.producto:nth-child(1) img{
-    height: 40rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-
-.producto:nth-child(2){
-    grid-column: 1 / 4;
-}
-.producto:nth-child(2) img,
-.producto:nth-child(3) img{
-    height: 30rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-.producto:nth-child(3){
-    grid-column: 4 / 7;
-}
-
-.producto:nth-child(4){
-    grid-column: 1 / 3;
-}
-
-.producto:nth-child(5){
-    grid-column: 3 / 5;
-}
-.producto:nth-child(6){
-    grid-column: 5 / 7;
+@media (min-width: 768px) {
+    .listado-productos{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2rem; /*separa elementos en columnas y en rows de grid*/
+    }
+    .producto{
+        margin-top: unset;
+    }
+    /*posicionar elementos dentro de las columnas de grid*/
+    .producto:nth-child(1){
+        grid-column: 1 / 7;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    .producto:nth-child(1) img{
+        height: 40rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    
+    .producto:nth-child(2){
+        grid-column: 1 / 4;
+    }
+    .producto:nth-child(2) img,
+    .producto:nth-child(3) img{
+        height: 30rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .producto:nth-child(3){
+        grid-column: 4 / 7;
+    }
+    
+    .producto:nth-child(4){
+        grid-column: 1 / 3;
+    }
+    
+    .producto:nth-child(5){
+        grid-column: 3 / 5;
+    }
+    .producto:nth-child(6){
+        grid-column: 5 / 7;
+    }
 }
 
 .producto{
     background-color: rgba(92, 42, 13, 0.822);
+    margin-top: 2rem;
+}
+.producto:first-of-type{
+    margin-top: unset;
 }
 .texto-producto{
     text-align: center;
@@ -229,27 +300,60 @@ a{
 .site-footer{
     border-top: 1px solid #e1e1e1;
     margin-top: 5rem;
-    padding-top: 5rem;
+    padding-top: 1rem;
 }
 .grid-footer{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
 }
 .site-footer h3{
     margin-bottom: .5rem;
+    text-align: center;
+}
+.titulos-footer{
+    font-size: 4rem;
+}
+.footer-menu{
+    font-size: 3rem;
+    border-bottom: .7rem solid rgba(247, 171, 156, 0.5);
+}
+.bordecitooos .footer-menu{
+    border-bottom: unset;
 }
 .footer-menu a{
     display: block;
-    width: fit-content;
     margin: .5rem 0 .5rem 0;
+    text-align: center;
 }
 
 .copyright{
     border-top: 1px solid #e1e1e1;
     padding: .5rem 0 0 0;
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    .grid-footer{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-bottom: 3rem;
+        grid-template-rows: unset;
+    }
+    .titulos-footer{
+        font-size: 2.5rem;
+    }
+    .footer-menu{
+        border-bottom: unset;
+    }
+    .footer-menu a{
+        font-size: 1.8rem;
+        text-align: left;
+    }
+    .site-footer h3{
+        text-align: left;
+        padding-top: 5rem;
+    }
 }
 
 /*pagina nosotros*/
